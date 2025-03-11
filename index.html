@@ -16,6 +16,7 @@
             position: absolute;
             top: 50%;
             right:50%;
+            height:100px;
             cursor: pointer;
             background-color: transparent;
             color: #fff;
@@ -34,20 +35,60 @@
             right:60%;
         }
 
+        .contianer.show-nav{
+            transform: rotate(20deg);
+
+        }
+        .contianer{
+            transition: all .5s linear;
+            transform-origin: top right ;
+        }
+
+        .contianer.show-nav .circle{
+            transform: rotate(-80deg);
+        }
+
+        .circle{
+            transition: transform .5s linear;
+        }
+
+        nav ul li {
+            color:#fff;
+            cursor: pointer;
+            font-size: 25px;
+            direction: rtl;
+            margin: 20px;
+            transform: translateX(150%);
+            transition: transform 4.s linear;
+        }
+        nav ul li svg{
+         margin-left: 10px;
+         font-size: 20px;
+        }
+        nav ul li + li{
+            margin-right: 35px;
+            transform: translateX(200%);
+
+        }
+        nav ul li + li +li{
+            margin-right: 60px;
+            transform: translateX(250%);
+        }
+
     </style>
 </head>
-<body class="font-medium text-right overflow-x-hidden">
-    <div class="circle-contianer fixed top-[-100px] right-[-100px]">
-        <div class="circle w-[200px] h-[200px] rounded-full  bg-orange-400 relative">
-            <button id="close">
-                <i class="fas fa-times"></i>
-            </button>
-            <button id="open">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </div>
-    <div class="contianer w-[100vw] min-h-[100vh] p-[50px] box-border">
+    <div class="contianer w-[100vw] min-h-[100vh] p-[50px] box-border bg-white">
+        <body class="font-medium text-right overflow-x-hidden bg-gray-900">
+            <div class="circle-contianer fixed top-[-100px] right-[-100px]">
+                <div class="circle w-[200px] h-[200px] rounded-full  bg-orange-400 relative">
+                    <button id="close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button id="open">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
         <div class="content w-[1000px] mx-auto my-[50px]">
             <h1 class="font-bold text-3xl pt-5">محتوای شگفت انگیز</h1>
             <small class="text-gray-500 mt-5">فاطمه رحیمی</small>
@@ -57,6 +98,13 @@
             <p class="leading-loose mt-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
         </div>
     </div>
+    <nav class="fixed bottom-[50px] right-[30px]">
+        <ul class="list-none">
+            <li><i class="fas fa-home"></i>خانه</li>
+            <li><i class="fas fa-user-alt"></i>درباره ما</li>
+            <li><i class="fas fa-envelope"></i>تماس باما</li>
+        </ul>
+    </nav>
     <script src="script/all.min.js"></script>
     <script src="script.js"></script>
 </body>
